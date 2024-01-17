@@ -11,8 +11,12 @@ module.exports = {
   },
 
   addons: [
+<<<<<<< HEAD
     '@storybook/addon-interactions',
     'storybook-addon-pseudo-states'
+=======
+    '@storybook/addon-interactions'
+>>>>>>> f32af70 (Updated dependencies, PoC with Storybook interations)
   ],
 
   docs: {
