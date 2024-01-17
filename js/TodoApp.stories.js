@@ -1,3 +1,6 @@
+import { userEvent, within } from '@storybook/testing-library';
+import { expect } from '@storybook/jest';
+
 import React, { useState, useRef } from 'react';
 import TodoApp from './TodoApp';
 
@@ -6,12 +9,10 @@ export default {
   component: TodoApp,
 };
 
-export const App = args => <TodoApp {...args}/>;
+export const Template = args => <TodoApp {...args}/>;
 
 // match component name for single story hoisting
-App.storyName = 'TodoApp';
-
-App.args = {
+Template.args = {
   showTodos: 'all',
   todos: [
     { title: 'Foo', completed: true },
@@ -22,23 +23,6 @@ App.args = {
   ]
 };
 
-<<<<<<< Updated upstream
-App.parameters = {
-  // take additional snapshots of various states
-  percy: {
-    additionalSnapshots: [{
-      suffix: ' - Active',
-      args: { showTodos: 'active' }
-    },{
-      suffix: ' - Completed',
-      args: { showTodos: 'completed' }
-    }, {
-      suffix: ' - None',
-      args: { todos: [] }
-    }]
-  }
-};
-=======
 export const App = Template.bind({});
 
 export const Input = Template.bind({});
@@ -100,4 +84,3 @@ Hover.parameters = {
     waitForSelector: '.percy-selector-placeholder'
   }
 }
->>>>>>> Stashed changes
