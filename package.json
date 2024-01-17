@@ -4,17 +4,27 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "start-storybook",
-    "build": "build-storybook",
-    "test": "percy storybook:start"
+    "start": "storybook dev",
+    "build": "storybook build",
+    "test": "percy storybook:start --port=9009"
   },
   "dependencies": {
-    "@percy/cli": "^1.0.5",
-    "@percy/storybook": "^4.2.0",
-    "@storybook/react": "^6.3.5",
+    "@storybook/react": "^7.6.9",
     "classnames": "^2.3.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "todomvc-app-css": "^2.0.0"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.23.8",
+    "@babel/preset-react": "^7.23.3",
+    "@babel/preset-typescript": "^7.23.3",
+    "@percy/cli": "^1.27.7",
+    "@percy/storybook": "^5.0.1",
+    "@storybook/addon-interactions": "^7.6.9",
+    "@storybook/jest": "^0.2.3",
+    "@storybook/react-webpack5": "^7.6.9",
+    "@storybook/testing-library": "^0.2.2",
+    "storybook": "^7.6.9"
   }
 }

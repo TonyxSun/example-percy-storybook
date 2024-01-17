@@ -1,3 +1,5 @@
+import { userEvent, within } from '@storybook/testing-library';
+import { expect } from '@storybook/jest'
 import React, { useState, useRef } from 'react';
 import TodoApp from './TodoApp';
 
@@ -6,12 +8,9 @@ export default {
   component: TodoApp,
 };
 
-export const App = args => <TodoApp {...args}/>;
+const Template = args => <TodoApp {...args}/>;
 
-// match component name for single story hoisting
-App.storyName = 'TodoApp';
-
-App.args = {
+Template.args = {
   showTodos: 'all',
   todos: [
     { title: 'Foo', completed: true },
@@ -20,6 +19,28 @@ App.args = {
     { title: 'Qux' },
     { title: 'Xyzzy' }
   ]
+};
+
+export const App = Template.bind({});
+
+export const Interaction = Template.bind({});
+
+Interaction.play = async ({ canvasElement }) => {
+  const canvas = within(canvasElement);
+  
+  const input = await canvas.getByTestId('new-todo');
+
+  // 👇 Simulate interactions with the component
+  await userEvent.type(input, 'ahoy!{enter}');
+
+  // 👇 Assert DOM structure
+  await expect(
+    canvas.getByDisplayValue(
+      'ahoy!'
+    )
+  ).toBeInTheDocument();
+  
+  input.classList.add('percy-selector-placeholder');
 };
 
 App.parameters = {
@@ -37,3 +58,9 @@ App.parameters = {
     }]
   }
 };
+
+Interaction.parameters = {
+  percy: {
+    waitForSelector: '.percy-selector-placeholder'
+  }
+}
