@@ -23,14 +23,28 @@ Template.args = {
 
 export const App = Template.bind({});
 
-export const Interaction = Template.bind({});
+export const Input = Template.bind({});
 
-Interaction.play = async ({ canvasElement }) => {
+export const Hover = Template.bind({});
+
+App.args = {
+  ...Template.args,
+};
+
+Input.args = {
+...Template.args,
+};
+
+Hover.args = {
+...Template.args,
+};
+
+Input.play = async ({ canvasElement }) => {
   const canvas = within(canvasElement);
   
   const input = await canvas.getByTestId('new-todo');
 
-  // 👇 Simulate interactions with the component
+  // 👇 Simulate Inputs with the component
   await userEvent.type(input, 'ahoy!{enter}');
 
   // 👇 Assert DOM structure
@@ -41,6 +55,20 @@ Interaction.play = async ({ canvasElement }) => {
   ).toBeInTheDocument();
   
   input.classList.add('percy-selector-placeholder');
+};
+
+Hover.play = async ({ canvasElement }) => {
+  const canvas = within(canvasElement);
+  
+  const clearCompleted = await canvas.getByTestId('clear-completed');
+
+  // 👇 Simulate Inputs with the component
+  await userEvent.hover(clearCompleted);
+  
+  clearCompleted.classList.add('percy-selector-placeholder');
+
+  // wait 
+  await new Promise(resolve => setTimeout(resolve, 1000));
 };
 
 App.parameters = {
@@ -59,7 +87,7 @@ App.parameters = {
   }
 };
 
-Interaction.parameters = {
+Input.parameters = {
   percy: {
     waitForSelector: '.percy-selector-placeholder'
   }

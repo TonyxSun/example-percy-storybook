@@ -11,7 +11,8 @@ module.exports = {
   },
 
   addons: [
-    '@storybook/addon-interactions'
+    '@storybook/addon-interactions',
+    'storybook-addon-pseudo-states'
   ],
 
   docs: {

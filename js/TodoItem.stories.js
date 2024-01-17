@@ -44,3 +44,13 @@ Editing.args = {
   title: 'Editing todo!',
   editing: true
 };
+
+export const Hover = Template.bind({});
+
+Hover.args = {
+  ...Template.args,
+  title: 'Completed todo!',
+  completed: true
+};
+
+Hover.parameters = { pseudo: { hover: true } }
