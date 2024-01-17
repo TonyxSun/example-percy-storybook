@@ -14,10 +14,16 @@ We set up an interaction event that involves two steps:
 To facilitate and explore Percy integration, we modify the class list to trigger a Percy snapshot after the interaction has completed. 
 
 ```javascript
+<<<<<<< HEAD
 // TodoApp.stories.js
 export const Input = Template.bind({});
 
 Input.play = async ({ canvasElement }) => {
+=======
+export const Interaction = Template.bind({});
+
+Interaction.play = async ({ canvasElement }) => {
+>>>>>>> f577e3a (Explored pseudo-states, added docs)
   const canvas = within(canvasElement);
   
   const input = await canvas.getByTestId('new-todo'); 
@@ -34,17 +40,24 @@ Input.play = async ({ canvasElement }) => {
   
   input.classList.add('percy-selector-placeholder');
 };
+<<<<<<< HEAD
 
 Input.parameters = {
   percy: {
     waitForSelector: '.percy-selector-placeholder'
   }
 }
+=======
+>>>>>>> f577e3a (Explored pseudo-states, added docs)
 ```
 
 (see all selectors at [testing-library](https://testing-library.com/))
 
+<<<<<<< HEAD
 **Demo**: See Interaction.webm file ![video](assets/Interaction.gif)
+=======
+**Demo**: See Interaction.webm file ![video](assets/Interaction.webm)
+>>>>>>> f577e3a (Explored pseudo-states, added docs)
 **Percy**: https://percy.io/28cf89c9/demo-storybook ![screenshot](assets/percy_console.png)
 
 ### Pseudostates

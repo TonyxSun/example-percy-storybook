@@ -35,6 +35,7 @@ export default function TodoFooter({
       {completedCount > 0 ? (
         <button
           className="clear-completed"
+          data-testid="clear-completed"
           onClick={onClearCompleted}>
           Clear completed
         </button>
