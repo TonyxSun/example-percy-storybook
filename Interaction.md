@@ -44,7 +44,7 @@ Input.parameters = {
 
 (see all selectors at [testing-library](https://testing-library.com/))
 
-**Demo**: See Interaction.webm file ![video](assets/Interaction.webm)
+**Demo**: See Interaction.webm file ![video](assets/Interaction.gif)
 **Percy**: https://percy.io/28cf89c9/demo-storybook ![screenshot](assets/percy_console.png)
 
 ### Pseudostates
