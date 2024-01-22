@@ -3,7 +3,7 @@
 Example app showing integration of [Percy](https://percy.io/) visual testing into Storybook.
 
 Based on the [TodoMVC](https://github.com/tastejs/todomvc) app, written with the latest version of
-Storybook for React.
+Storybook for React. 
 
 ## Storybook Tutorial
 
