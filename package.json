@@ -9,6 +9,7 @@
     "test": "percy storybook:start --port=9009"
   },
   "dependencies": {
+    "@storybook/manager-api": "^7.6.10",
     "@storybook/react": "^7.6.9",
     "classnames": "^2.3.1",
     "react": "^17.0.2",

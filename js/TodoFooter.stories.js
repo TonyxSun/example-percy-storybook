@@ -7,7 +7,7 @@ import TodoFooter from './TodoFooter';
 export default {
   title: 'TodoFooter',
   component: TodoFooter,
-  includeStories: ['All' , 'Active', 'Completed'  ]
+  // includeStories: ['All' , 'Active', 'Completed'  ]
 };
 
 
@@ -43,6 +43,8 @@ Completed.args = {
   showTodos: 'completed',
   completedCount: 1
 };
+
+Completed.tags = ['isHidden']
 
 export const _hidden_ = Template.bind({});
 
